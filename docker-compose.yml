@@ -1,0 +1,13 @@
+services:
+  db:
+    image: mysql:latest
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: s3cr3t
+      MYSQL_DATABASE: bas_balance
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+volumes:
+  db-data:
